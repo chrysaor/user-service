@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  database:
+    image: postgres:13
+    container_name: postgres_13
+    hostname: postgres_13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+    restart: unless-stopped
+
+  user-service:
+    image: user-service
+    container_name: user-service
+    hostname: user-service
+    environment:
+      # Dev Server
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - DB_NAME=postgres
+      - DB_TYPE=postgresql
+      - DB_PORT=5432
+      - DB_HOSTNAME=postgres_13
+    restart: always
+    ports:
+      - '5000:5000'
+    depends_on:
+      - database
