@@ -23,6 +23,20 @@ SMS 인증도 포함하여 구현하였습니다.
 - Docker (https://www.docker.com)
 ---
 
+## User-service environments
+
+---
+```
+FLASK_ENV: 플라스크 환경 변수 (development, production)
+DB_TYPE: DB 타입
+DB_USER: DB 계정
+DB_PASSWORD: 패스워드
+DB_HOSTNAME: 호스트
+DB_PORT: 포트
+DB_NAME: 이름
+```
+---
+
 ## 빌드 및 실행 방법
 ```
 # 유저 서비스 이미지 빌드
@@ -41,12 +55,19 @@ make docker-stop
 - http://localhost:5000
 - Production 서버의 경우 API 문서 미생성
 
-## Sequential Diagram
-
-- TBD
 
 ## Test
 
 ```
+# feature/pytest 추가 예정
 make pytest
 ```
+
+
+## Sequential Diagram
+
+![회원가입](./docs/seq_diagram/user_reg.jpg)
+
+![로그인](./docs/seq_diagram/login_info.jpg)
+
+![비밀번호찾기](./docs/seq_diagram/find_password.jpg)
