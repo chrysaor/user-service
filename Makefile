@@ -5,10 +5,14 @@ clean:
 install:
 	pip install -r requirements.txt
 
+.PHONY: tests
+tests:
+	./scripts/pytest.sh
+
 run:
 	./scripts/start_server.sh
 
-all: clean install run
+all: clean install tests run
 
 user-service-dev:
 	docker build -f ./build/docker/dev/Dockerfile -t user-service .

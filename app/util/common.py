@@ -54,7 +54,7 @@ def check_mobile_num(mobile_num: str):
 
     """
     # Mobile number 확인용 정규표현식
-    mobile_reg = re.compile(r'^01([0])-?([0-9]{3,4})-?([0-9]{4})$')
+    mobile_reg = re.compile(r'^01([0-9])-?([0-9]{3,4})-?([0-9]{4})$')
     if mobile_reg.match(mobile_num) is None:
         raise ApiException(ApiError.BadRequest)
 
