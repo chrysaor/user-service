@@ -72,3 +72,9 @@ or
 ![로그인](./docs/seq_diagram/login_info.jpg)
 
 ![비밀번호찾기](./docs/seq_diagram/find_password.jpg)
+
+
+## Commit message rule
+
+유다시티 commit message rule 기반
+https://udacity.github.io/git-styleguide
