@@ -16,4 +16,4 @@ class Constants:
 
 
 # Exception constant
-template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+template = 'An exception of type {0} occurred. Arguments:\n{1!r}'
