@@ -18,6 +18,12 @@ class DBConfig:
         return cls.db_uri_str
 
 
+class TestDBConfig(DBConfig):
+    @classmethod
+    def db_uri(cls):
+        return 'sqlite:///tests/app/test.db'
+
+
 class Config:
     APPLICATION_NAME = 'user-service'
     CONFIG_NAME = 'base'
