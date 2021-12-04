@@ -59,8 +59,9 @@ make docker-stop
 ## Test
 
 ```
-# feature/pytest 추가 예정
 make pytest
+or
+./script/pytest.sh
 ```
 
 
