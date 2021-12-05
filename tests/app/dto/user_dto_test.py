@@ -16,22 +16,22 @@ def test_user_dto_user_info():
 
 
 def test_user_dto_register_sms_req():
-    current_model = UserDto.register_sms_req
+    current_model = UserDto.register_sms_req.resolved
 
     assert isinstance(current_model, Model)
     assert len(current_model) == 5
+    assert isinstance(current_model.get('sms_type'), String)
     assert isinstance(current_model.get('email'), String)
     assert isinstance(current_model.get('name'), String)
     assert isinstance(current_model.get('nickname'), String)
     assert isinstance(current_model.get('mobile_num'), String)
-    assert isinstance(current_model.get('sms_type'), String)
 
 
 def test_user_dto_register_user():
-    current_model = UserDto.register_user
+    current_model = UserDto.register_user.resolved
 
     assert isinstance(current_model, Model)
-    assert len(current_model) == 5
+    assert len(current_model) == 6
     assert isinstance(current_model.get('email'), String)
     assert isinstance(current_model.get('name'), String)
     assert isinstance(current_model.get('nickname'), String)
