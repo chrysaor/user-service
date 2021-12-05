@@ -76,5 +76,5 @@ or
 
 ## Commit message rule
 
-유다시티 commit message rule 기반
-https://udacity.github.io/git-styleguide
+- 유다시티 commit message rule 기반
+- https://udacity.github.io/git-styleguide

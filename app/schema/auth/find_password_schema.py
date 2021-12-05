@@ -6,7 +6,7 @@ from marshmallow import Schema, fields, validate, validates, ValidationError
 class FindPasswordSchema(Schema):
     email = fields.String(validate=validate.Email())
     mobile_num = fields.String()
-    request_id = fields.String(validate=validate.Length(40))
+    request_id = fields.String(validate=validate.Length(equal=40))
 
     @validates('mobile_num')
     def validate_mobile_num(self, mobile_num):
