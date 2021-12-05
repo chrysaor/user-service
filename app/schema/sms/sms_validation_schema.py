@@ -7,9 +7,9 @@ class SmsValidationSchema(Schema):
     sms_type = fields.String(
         validate=validate.OneOf(['REGISTER', 'LOGIN', 'FIND_PASSWORD'])
     )
-    request_id = fields.String(validate=validate.Length(40))
+    request_id = fields.String(validate=validate.Length(equal=40))
     mobile_num = fields.String()
-    auth_code = fields.String(validate=validate.Length(6))
+    auth_code = fields.String(validate=validate.Length(equal=6))
 
     @validates('mobile_num')
     def validate_mobile_num(self, mobile_num):
